@@ -1,0 +1,228 @@
+.onboarding-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg-primary);
+}
+
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.orb-1 {
+  width: 50vw;
+  height: 50vw;
+  background: var(--accent-primary);
+  top: -20%;
+  left: -10%;
+  animation: floatOrb 10s ease-in-out infinite alternate;
+}
+
+.orb-2 {
+  width: 40vw;
+  height: 40vw;
+  background: var(--accent-secondary);
+  bottom: -10%;
+  right: -5%;
+  animation: floatOrb 12s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes floatOrb {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-50px) scale(1.1); }
+}
+
+.onboarding-card {
+  position: relative;
+  z-index: 10;
+  width: 90%;
+  max-width: 500px;
+  min-height: 400px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-step h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.intro-step .subtitle {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 2.5rem;
+  text-align: left;
+  width: 100%;
+}
+
+.feat-card {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 20px 15px;
+  border-radius: var(--radius-lg);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.feat-card:hover {
+  background: rgba(123, 97, 255, 0.08);
+  transform: translateY(-5px) scale(1.02);
+  border-color: rgba(123, 97, 255, 0.5);
+  box-shadow: 0 8px 25px rgba(123, 97, 255, 0.2);
+}
+
+.btn-group {
+  display: flex;
+  gap: 16px;
+  margin-top: 2rem;
+}
+
+.video-container {
+  width: 160px;
+  height: 160px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin: 0 auto 2rem;
+  position: relative;
+  border: 4px solid var(--accent-primary);
+  box-shadow: 0 0 20px rgba(123, 97, 255, 0.3);
+}
+
+.scanner-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+.scanner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(123, 97, 255, 0) 0%, rgba(123, 97, 255, 0.2) 50%, rgba(123, 97, 255, 0) 100%);
+  background-size: 100% 200%;
+  animation: scan 2s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.pulse-text {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: var(--accent-gradient);
+  transition: width 0.3s ease;
+}
+
+.hint {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.text-center { text-align: center; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.text-sm { font-size: 0.85rem; }
+.text-secondary { color: var(--text-secondary); }
+
+.recommended-badge {
+  display: flex;
+  align-items: center;
+  background: rgba(123, 97, 255, 0.1);
+  border: 1px solid var(--accent-primary);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  gap: 16px;
+  margin: 1.5rem 0;
+  animation: pulse 2s infinite;
+}
+
+.badge-icon {
+  font-size: 2rem;
+}
+
+.badge-info h4 {
+  margin-bottom: 4px;
+  color: var(--accent-primary);
+}
+
+.badge-info span {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.interface-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+}
+
+.interface-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px 16px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  transition: var(--transition);
+}
+
+.interface-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.interface-card .emoji {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.recommended-highlight {
+  background: rgba(123, 97, 255, 0.15);
+  border-color: var(--accent-primary);
+}
